@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelantikan & Pengajian Akbar PC PMII Purworejo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --blue-pmii: #003366; --yellow-pmii: #F1C40F; }
+        body { margin:0; font-family: 'Poppins', sans-serif; background: #eee; display:flex; justify-content:center; }
+        .app { width:100%; max-width:480px; background:white; min-height:100vh; position:relative; }
+        .cover { position:fixed; top:0; width:100%; max-width:480px; height:100vh; background:var(--blue-pmii); color:white; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:999; }
+        .btn-open { background:var(--yellow-pmii); color:var(--blue-pmii); padding:15px 30px; border-radius:30px; border:none; font-weight:700; cursor:pointer; }
+        .section { padding:20px; text-align:center; }
+        .profile-img { width:120px; height:120px; border-radius:50%; border:4px solid var(--yellow-pmii); object-fit:cover; margin-bottom:10px; }
+        .card { background:#f9f9f9; padding:20px; border-radius:15px; margin-bottom:20px; }
+    </style>
+</head>
+<body>
+
+    <div class="cover" id="cover">
+        <h1>PELANTIKAN PC PMII</h1>
+        <p>Kabupaten Purworejo - Masa Khidmat 2026-2027</p>
+        <button class="btn-open" onclick="buka()">Buka Undangan</button>
+    </div>
+
+    <audio id="audio" loop>
+        <source src="audio/hymne.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="app" id="konten" style="display:none;">
+        <div class="section">
+            <div class="card">
+                <h2>Pengisi Acara</h2>
+                <img src="images/chalwani.jpg" class="profile-img" alt="KH Achmad Chalwani">
+                <p><b>KH Achmad Chalwani</b><br>Pengisi Pengajian Akbar</p>
+                <hr>
+                <img src="images/shofiyulloh.jpg" class="profile-img" alt="M. Shofiyulloh Cokro">
+                <p><b>M. Shofiyulloh Cokro</b><br>Ketua Umum PB PMII</p>
+            </div>
+
+            <div class="card">
+                <h2>Konfirmasi Kehadiran</h2>
+                <a href="https://wa.me/628123456789" style="background:#25d366; color:white; padding:10px 20px; text-decoration:none; border-radius:5px;">Chat WhatsApp</a>
+            </div>
+
+            <div class="card">
+                <h2>Donasi / Amplop Digital</h2>
+                <img src="images/qris.png" style="width:100%; border-radius:10px;" alt="QRIS">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function buka() {
+            document.getElementById('cover').style.display = 'none';
+            document.getElementById('konten').style.display = 'block';
+            document.getElementById('audio').play();
+        }
+    </script>
+</body>
+</html>
